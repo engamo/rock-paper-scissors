@@ -35,9 +35,11 @@ function checkWinner() {
   const winnerDiv = document.querySelector("#winner");
   if (humanScore === 5) {
     winnerDiv.textContent = "Result: Congratulations! You won the game!";
+    winnerDiv.style.color = "green";
     resetGame();
   } else if (computerScore === 5) {
     winnerDiv.textContent = "Result: Sorry, you lost the game.";
+    winnerDiv.style.color = "red";
     resetGame();
   }
 }
