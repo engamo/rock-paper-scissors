@@ -36,11 +36,11 @@ function checkWinner() {
   if (humanScore === 5) {
     winnerDiv.textContent = "Result: Congratulations! You won the game!";
     winnerDiv.style.color = "green";
-    resetGame();
+    setTimeout(resetGame, 2000);
   } else if (computerScore === 5) {
     winnerDiv.textContent = "Result: Sorry, you lost the game.";
     winnerDiv.style.color = "red";
-    resetGame();
+    setTimeout(resetGame, 2000);
   }
 }
 
@@ -48,6 +48,8 @@ function resetGame() {
   humanScore = 0;
   computerScore = 0;
   document.querySelector("#result").textContent = "";
+  document.querySelector('#winner').textContent = "Result: ";
+  document.querySelector("#winner").style.color = "#28a745";
   document.querySelector("#score").textContent = "Score - You: 0 | Computer: 0";
 }
 
@@ -61,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelector("#scissors")
     .addEventListener("click", () => playRound("scissors"));
-    document.querySelector('#winner').textContent = "Result: ";
+  document.querySelector("#winner").textContent = "Result: ";
   document.querySelector("#reset").addEventListener("click", resetGame);
 });
-
